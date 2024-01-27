@@ -35,6 +35,8 @@ export const LogoText = styled.div`
   align-items: center;
   position: absolute;
   left: 150px;
+  bottom: 18px;
+  text-decoration: none;
 `;
 
 export const NavItemUl = styled.ul`

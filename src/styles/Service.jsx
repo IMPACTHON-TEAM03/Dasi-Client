@@ -1,69 +1,140 @@
 import styled from "styled-components";
 
-export const Study = styled.img`
+export const Box = styled.div`
+  width: 230px;
+  height: 440px;
+  border-radius: 20px;
+  border: 3px solid var(--gray700, #545454);
   position: absolute;
-  top: 160px;
-  left: 190px;
+  top: 170px;
+
+  &:hover::before {
+    content: "";
+    background: #6e6e6e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    cursor: pointer;
+  }
 `;
 
-export const Service = styled.img`
+export const Box1 = styled.div`
   position: absolute;
-  top: 160px;
-  left: 644px;
+  left: 140px;
+`;
+export const Box2 = styled.div`
+  position: absolute;
+  left: 390px;
+`;
+export const Box3 = styled.div`
+  position: absolute;
+  left: 640px;
+`;
+export const Box4 = styled.div`
+  position: absolute;
+  left: 890px;
+`;
+export const Box5 = styled.div`
+  position: absolute;
+  top: 170px;
+  left: 1140px;
+  width: 240px;
+  height: 440px;
+  border-radius: 20px;
+  border: 3px solid var(--gray700, #545454);
+
+  &:hover::before {
+    content: "";
+    background: #6e6e6e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    cursor: pointer;
+  }
 `;
 
-export const House = styled.img`
+export const People = styled.img`
   position: absolute;
-  top: 160px;
-  left: 1125px;
+  top: 230px;
+  left: 210px;
+  width: 100px;
+  height: 100px;
 `;
 
-export const Painter = styled.img`
+export const Call = styled.img`
   position: absolute;
-  top: 414px;
-  left: 396px;
+  top: 230px;
+  left: 470px;
+  width: 100px;
+  height: 100px;
 `;
 
-export const Grass = styled.img`
+export const Home = styled.img`
   position: absolute;
-  top: 414px;
-  left: 902px;
+  top: 230px;
+  left: 710px;
+  width: 100px;
+  height: 100px;
+`;
+
+export const Roller = styled.img`
+  position: absolute;
+  top: 230px;
+  left: 950px;
+  width: 100px;
+  height: 100px;
+`;
+
+export const Chat = styled.img`
+  position: absolute;
+  top: 230px;
+  left: 1205px;
+  width: 100px;
+  height: 100px;
 `;
 
 export const StudyText = styled.div`
   position: absolute;
-  top: 300px;
-  left: 125px;
+  top: 400px;
+  left: 190px;
 `;
 
 export const ServiceText = styled.div`
   position: absolute;
-  top: 300px;
-  left: 570px;
+  top: 400px;
+  left: 435px;
 `;
 
 export const HouseText = styled.div`
   position: absolute;
-  top: 300px;
-  left: 1070px;
+  top: 400px;
+  left: 690px;
 `;
 
 export const PainterText = styled.div`
   position: absolute;
-  top: 570px;
-  left: 330px;
+  top: 400px;
+  left: 905px;
+  font-size: 28px;
 `;
 
 export const GrassText = styled.div`
   position: absolute;
-  top: 570px;
-  left: 780px;
+  top: 400px;
+  left: 1155px;
+  font-size: 26px;
 `;
 
 export const Text = styled.div`
   color: var(--Black, #000);
   font-family: Inter;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 46px;
@@ -82,26 +153,26 @@ export const Price = styled.div`
 
 export const StudyPrice = styled.div`
   position: absolute;
-  top: 350px;
-  left: 225px;
+  top: 490px;
+  left: 220px;
 `;
 export const ServicePrice = styled.div`
   position: absolute;
-  top: 350px;
-  left: 690px;
+  top: 490px;
+  left: 470px;
 `;
 export const HousePrice = styled.div`
   position: absolute;
-  top: 350px;
-  left: 1170px;
+  top: 490px;
+  left: 720px;
 `;
 export const PainterPrice = styled.div`
   position: absolute;
-  top: 620px;
-  left: 450px;
+  top: 490px;
+  left: 970px;
 `;
 export const GrassPrice = styled.div`
   position: absolute;
-  top: 620px;
-  left: 955px;
+  top: 490px;
+  left: 1220px;
 `;

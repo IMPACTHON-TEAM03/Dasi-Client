@@ -7,9 +7,11 @@ const index = () => {
   return (
     <div>
       <s.HeaderContainer>
-        <s.Return src={returnicon} />
-        <s.LogoText>다시</s.LogoText>
         <s.NavItemUl>
+          <Link to="/">
+            <s.Return src={returnicon} />
+            <s.LogoText>다시</s.LogoText>
+          </Link>
           <s.NavItemLi>
             <Link to="/region">지역</Link>
           </s.NavItemLi>
