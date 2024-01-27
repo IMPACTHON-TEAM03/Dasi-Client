@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as s from "../../styles/RegionPageStyle";
+import Header from "../../components/header";
 
 const questions = [
   {
@@ -84,12 +85,8 @@ const Region = () => {
         <s.TitleText>{`Q${question.id}.`}</s.TitleText>
         <s.QuestionText>{question.text}</s.QuestionText>
         <s.AnswerSection>
-          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, true)}>
-            예
-          </s.AnswerButton>
-          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, false)}>
-            아니오
-          </s.AnswerButton>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, true)}>예</s.AnswerButton>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, false)}>아니오</s.AnswerButton>
         </s.AnswerSection>
       </s.QuestionSection>
     );
@@ -97,12 +94,11 @@ const Region = () => {
 
   return (
     <>
+      <Header />
       <s.MainContainer>{renderQuestion()}</s.MainContainer>
       {currentQuestion >= questions.length && (
         <s.RecommendationSection>
-          <s.RecommendationText>
-            추천 지역: {calculateRecommendation()}
-          </s.RecommendationText>
+          <s.RecommendationText>추천 지역: {calculateRecommendation()}</s.RecommendationText>
         </s.RecommendationSection>
       )}
     </>
