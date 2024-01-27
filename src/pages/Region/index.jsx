@@ -84,8 +84,12 @@ const Region = () => {
         <s.TitleText>{`Q${question.id}.`}</s.TitleText>
         <s.QuestionText>{question.text}</s.QuestionText>
         <s.AnswerSection>
-          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, true)}>예</s.AnswerButton>
-          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, false)}>아니오</s.AnswerButton>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, true)}>
+            예
+          </s.AnswerButton>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, false)}>
+            아니오
+          </s.AnswerButton>
         </s.AnswerSection>
       </s.QuestionSection>
     );
@@ -93,18 +97,12 @@ const Region = () => {
 
   return (
     <>
-      <s.HeaderContainer>
-        <s.NavItemUl>
-          <s.NavItemLi>지역</s.NavItemLi>
-          <s.NavItemLi>부동산</s.NavItemLi>
-          <s.NavItemLi>귀농 모임</s.NavItemLi>
-          <s.NavItemLi>전문가 연계</s.NavItemLi>
-        </s.NavItemUl>
-      </s.HeaderContainer>
       <s.MainContainer>{renderQuestion()}</s.MainContainer>
       {currentQuestion >= questions.length && (
         <s.RecommendationSection>
-          <s.RecommendationText>추천 지역: {calculateRecommendation()}</s.RecommendationText>
+          <s.RecommendationText>
+            추천 지역: {calculateRecommendation()}
+          </s.RecommendationText>
         </s.RecommendationSection>
       )}
     </>

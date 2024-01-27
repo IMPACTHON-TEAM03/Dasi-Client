@@ -73,9 +73,9 @@ export const Text = styled.div`
 export const Price = styled.div`
   color: var(--Black, #000);
   font-family: Inter;
-  font-size: 14px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 46px;
   letter-spacing: -0.6px;
 `;
