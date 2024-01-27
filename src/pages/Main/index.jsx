@@ -1,12 +1,15 @@
 import React from "react";
 import * as s from "../../styles/IndexPageStyle";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
     <>
       <s.HeaderContainer>
         <s.NavItemUl>
-          <s.NavItemLi>지역</s.NavItemLi>
+          <s.NavItemLi>
+            <Link to="/region">지역</Link>
+          </s.NavItemLi>
           <s.NavItemLi>부동산</s.NavItemLi>
           <s.NavItemLi>귀농 모임</s.NavItemLi>
           <s.NavItemLi>전문가 연계</s.NavItemLi>
