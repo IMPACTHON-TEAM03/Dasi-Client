@@ -2,38 +2,11 @@ import styled from "styled-components";
 import BackgroundJPEG from "../images/background.jpeg";
 import ScrollDownPNG from "../images/scrolldown.png";
 
-export const HeaderContainer = styled.div`
-  background-color: transparent;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 61px;
-  height: 94px;
-  position: absolute;
-`;
-
-export const NavItemUl = styled.ul`
-  display: flex;
-`;
-
-export const NavItemLi = styled.li`
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  &:not(:last-child) {
-    margin-right: 72px;
-  }
-`;
-
 export const MainSection = styled.section`
   width: 100%;
   height: 100vh;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${BackgroundJPEG});
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${BackgroundJPEG});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,6 +14,7 @@ export const MainSection = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 export const MainSectionTitle = styled.p`

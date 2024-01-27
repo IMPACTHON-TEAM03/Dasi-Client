@@ -5,7 +5,6 @@ import Header from "../../components/Header";
 const Main = () => {
   return (
     <>
-      <Header />
       <S.MainSection>
         <S.MainSectionTitle>
           귀농하시나요?
