@@ -1,17 +1,18 @@
 import React from "react";
-import * as s from "../../styles/IndexPageStyle";
+import * as S from "../../styles/IndexPageStyle";
+import Header from "../../components/Header";
 
 const Main = () => {
   return (
     <>
-      <s.MainSection>
-        <s.MainSectionTitle>
+      <S.MainSection>
+        <S.MainSectionTitle>
           귀농하시나요?
           <br />
           A부터 Z까지 맡겨만 주세요!
-        </s.MainSectionTitle>
-        <s.ScrollDown />
-      </s.MainSection>
+        </S.MainSectionTitle>
+        <S.ScrollDown />
+      </S.MainSection>
     </>
   );
 };
