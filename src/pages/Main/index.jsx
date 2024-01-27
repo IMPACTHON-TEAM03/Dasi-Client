@@ -1,5 +1,6 @@
 import React from "react";
-import * as S from "../../styles/IndexPageStyle";
+import * as s from "../../styles/IndexPageStyle";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (

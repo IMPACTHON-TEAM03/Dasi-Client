@@ -3,16 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import Service from "./pages/Service";
 import Region from "./pages/Region";
-import Property from "./pages/Property";
-import Header from "./Header";
 import Locate from "./pages/Locate";
 import Detail from "./pages/Detail";
+import Property from "./pages/Property";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/service" element={<Service />} />
