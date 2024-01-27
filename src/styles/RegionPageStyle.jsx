@@ -62,6 +62,7 @@ export const QuestionText = styled.p`
   font-weight: 700;
   line-height: normal;
   margin-top: 7px;
+  text-align: center;
 `;
 
 export const AnswerSection = styled.section`
@@ -87,4 +88,16 @@ export const AnswerButton = styled.button`
     opacity: 0.8;
     cursor: pointer;
   }
+`;
+
+export const RecommendationSection = styled.section`
+  margin-top: 20px;
+`;
+
+export const RecommendationText = styled.p`
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #333;
 `;
