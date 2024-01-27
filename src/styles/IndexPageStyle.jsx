@@ -41,6 +41,7 @@ export const MainSection = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 `;
 
 export const MainSectionTitle = styled.p`
