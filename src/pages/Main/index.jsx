@@ -12,7 +12,9 @@ const Main = () => {
           </s.NavItemLi>
           <s.NavItemLi>부동산</s.NavItemLi>
           <s.NavItemLi>귀농 모임</s.NavItemLi>
-          <s.NavItemLi>전문가 연계</s.NavItemLi>
+          <s.NavItemLi>
+            <Link to="/service">서비스</Link>
+          </s.NavItemLi>
         </s.NavItemUl>
       </s.HeaderContainer>
       <s.MainSection>
