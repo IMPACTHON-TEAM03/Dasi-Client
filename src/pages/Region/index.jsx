@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as s from "../../styles/RegionPageStyle";
+import Header from "../../components/header";
 
 const questions = [
   {
@@ -93,14 +94,7 @@ const Region = () => {
 
   return (
     <>
-      <s.HeaderContainer>
-        <s.NavItemUl>
-          <s.NavItemLi>지역</s.NavItemLi>
-          <s.NavItemLi>부동산</s.NavItemLi>
-          <s.NavItemLi>귀농 모임</s.NavItemLi>
-          <s.NavItemLi>전문가 연계</s.NavItemLi>
-        </s.NavItemUl>
-      </s.HeaderContainer>
+      <Header />
       <s.MainContainer>{renderQuestion()}</s.MainContainer>
       {currentQuestion >= questions.length && (
         <s.RecommendationSection>

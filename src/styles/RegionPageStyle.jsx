@@ -1,32 +1,5 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.div`
-  background-color: transparent;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 61px;
-  height: 94px;
-`;
-
-export const NavItemUl = styled.ul`
-  display: flex;
-`;
-
-export const NavItemLi = styled.li`
-  color: #04c974;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  &:not(:last-child) {
-    margin-right: 72px;
-  }
-`;
-
 export const MainContainer = styled.div`
   width: 100%;
   height: calc(100vh - 94px);
