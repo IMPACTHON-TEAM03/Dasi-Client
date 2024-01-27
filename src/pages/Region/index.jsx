@@ -1,20 +1,32 @@
 import React, { useState } from "react";
 import * as s from "../../styles/RegionPageStyle";
 
-const Region = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(1);
-  const [answers, setAnswers] = useState({
-    q1: false,
-    q2: false,
-    q3: false,
-    q4: false,
-    q5: false,
-  });
+const questions = [
+  {
+    id: 1,
+    text: "토지 가격이 낮은 지역을 원하시나요?",
+  },
+  {
+    id: 2,
+    text: "전통시장 접근성이 좋은 지역을 원하시나요?",
+  },
+  {
+    id: 3,
+    text: "타지 접근성이 좋은 지역을 원하시나요?",
+  },
+  {
+    id: 4,
+    text: "초, 중, 고등학교에 재학중 또는 별거하지 않는 교육받는 자녀가 있으신가요?",
+  },
+  {
+    id: 5,
+    text: "의원, 약국 등의 의료시설이 인근에 필요하신가요?",
+  },
+];
 
-  const handleAnswer = (question, answer) => {
-    setAnswers({ ...answers, [question]: answer });
-    setCurrentQuestion(currentQuestion + 1);
-  };
+const Region = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
 
   const recommendationMap = {
     "00000": "지역 A",
@@ -51,73 +63,32 @@ const Region = () => {
     11111: "지역 AF",
   };
 
+  const handleAnswer = (index, answer) => {
+    const newAnswers = [...answers];
+    newAnswers[index] = answer;
+    setAnswers(newAnswers);
+    setCurrentQuestion(currentQuestion + 1);
+  };
+
   const calculateRecommendation = () => {
-    const key = Object.values(answers)
-      .map((answer) => (answer ? "1" : "0"))
-      .join("");
+    const key = answers.map((answer) => (answer ? "1" : "0")).join("");
     return recommendationMap[key] || "일반 추천 지역";
   };
 
   const renderQuestion = () => {
-    switch (currentQuestion) {
-      case 1:
-        return (
-          <s.QuestionSection>
-            <s.TitleText>Q1.</s.TitleText>
-            <s.QuestionText>토지 가격이 낮은 지역을 원하시나요?</s.QuestionText>
-            <s.AnswerSection>
-              <s.AnswerButton onClick={() => handleAnswer("q1", true)}>예</s.AnswerButton>
-              <s.AnswerButton onClick={() => handleAnswer("q1", false)}>아니오</s.AnswerButton>
-            </s.AnswerSection>
-          </s.QuestionSection>
-        );
-      case 2:
-        return (
-          <s.QuestionSection>
-            <s.TitleText>Q2.</s.TitleText>
-            <s.QuestionText>전통시장 접근성이 좋은 지역을 원하시나요?</s.QuestionText>
-            <s.AnswerSection>
-              <s.AnswerButton onClick={() => handleAnswer("q2", true)}>예</s.AnswerButton>
-              <s.AnswerButton onClick={() => handleAnswer("q2", false)}>아니오</s.AnswerButton>
-            </s.AnswerSection>
-          </s.QuestionSection>
-        );
-      case 3:
-        return (
-          <s.QuestionSection>
-            <s.TitleText>Q3.</s.TitleText>
-            <s.QuestionText>타지 접근성이 좋은 지역을 원하시나요?</s.QuestionText>
-            <s.AnswerSection>
-              <s.AnswerButton onClick={() => handleAnswer("q3", true)}>예</s.AnswerButton>
-              <s.AnswerButton onClick={() => handleAnswer("q3", false)}>아니오</s.AnswerButton>
-            </s.AnswerSection>
-          </s.QuestionSection>
-        );
-      case 4:
-        return (
-          <s.QuestionSection>
-            <s.TitleText>Q4.</s.TitleText>
-            <s.QuestionText>초, 중, 고등학교에 재학중 또는 별거하지 않는 교육받는 자녀가 있으신가요?</s.QuestionText>
-            <s.AnswerSection>
-              <s.AnswerButton onClick={() => handleAnswer("q4", true)}>예</s.AnswerButton>
-              <s.AnswerButton onClick={() => handleAnswer("q4", false)}>아니오</s.AnswerButton>
-            </s.AnswerSection>
-          </s.QuestionSection>
-        );
-      case 5:
-        return (
-          <s.QuestionSection>
-            <s.TitleText>Q5.</s.TitleText>
-            <s.QuestionText>의원, 약국 등의 의료시설이 인근에 필요하신가요?</s.QuestionText>
-            <s.AnswerSection>
-              <s.AnswerButton onClick={() => handleAnswer("q5", true)}>예</s.AnswerButton>
-              <s.AnswerButton onClick={() => handleAnswer("q5", false)}>아니오</s.AnswerButton>
-            </s.AnswerSection>
-          </s.QuestionSection>
-        );
-      default:
-        return null;
-    }
+    if (currentQuestion >= questions.length) return null;
+
+    const question = questions[currentQuestion];
+    return (
+      <s.QuestionSection key={question.id}>
+        <s.TitleText>{`Q${question.id}.`}</s.TitleText>
+        <s.QuestionText>{question.text}</s.QuestionText>
+        <s.AnswerSection>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, true)}>예</s.AnswerButton>
+          <s.AnswerButton onClick={() => handleAnswer(currentQuestion, false)}>아니오</s.AnswerButton>
+        </s.AnswerSection>
+      </s.QuestionSection>
+    );
   };
 
   return (
@@ -131,7 +102,7 @@ const Region = () => {
         </s.NavItemUl>
       </s.HeaderContainer>
       <s.MainContainer>{renderQuestion()}</s.MainContainer>
-      {currentQuestion > 5 && (
+      {currentQuestion >= questions.length && (
         <s.RecommendationSection>
           <s.RecommendationText>추천 지역: {calculateRecommendation()}</s.RecommendationText>
         </s.RecommendationSection>
