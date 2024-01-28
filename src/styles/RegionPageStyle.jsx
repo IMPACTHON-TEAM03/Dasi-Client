@@ -64,13 +64,65 @@ export const AnswerButton = styled.button`
 `;
 
 export const RecommendationSection = styled.section`
-  margin-top: 20px;
+  width: 100%;
+  height: calc(100vh - 94px);
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
-export const RecommendationText = styled.p`
-  font-size: 24px;
+export const RecommendationTitleText = styled.p`
+  font-size: 48px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   color: #333;
+`;
+
+export const RecommendationText = styled.p`
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 7px;
+  text-align: center;
+`;
+
+export const RecommendationSubText = styled.p`
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 7px;
+  text-align: center;
+`;
+
+export const RecommendationButton = styled.button`
+  width: 500px;
+  height: 70px;
+  background: #04c974;
+  border-radius: 60px;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: #04c974;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`;
+
+export const RecommendationDetailsText = styled.p`
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 7px;
+  text-align: center;
+  margin-top: 20px;
 `;

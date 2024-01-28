@@ -11,7 +11,37 @@ const Main = () => {
         <s.LogoText>다시</s.LogoText>
         <s.NavItemUl>
           <s.NavItemLi>
-            <Link to="/region">지역</Link>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+              }}
+              to="/region"
+            >
+              지역
+            </Link>
+          </s.NavItemLi>
+          <s.NavItemLi>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+              }}
+              to="/property"
+            >
+              부동산
+            </Link>
+          </s.NavItemLi>
+          <s.NavItemLi>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+              }}
+              to="/service"
+            >
+              서비스
+            </Link>
           </s.NavItemLi>
           <s.NavItemLi>
             <Link to="/property">부동산</Link>
