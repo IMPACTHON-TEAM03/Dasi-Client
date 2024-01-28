@@ -108,11 +108,21 @@ export const RecommendationButton = styled.button`
   color: white;
   font-size: 36px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 20px;
 
   &:hover {
     background-color: #04c974;
     opacity: 0.8;
     cursor: pointer;
   }
+`;
+
+export const RecommendationDetailsText = styled.p`
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 7px;
+  text-align: center;
+  margin-top: 20px;
 `;

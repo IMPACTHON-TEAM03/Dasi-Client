@@ -106,6 +106,7 @@ const Region = () => {
             <s.RecommendationTitleText>그렇다면..</s.RecommendationTitleText>
             <s.RecommendationText>경상북도 상주시 모동면 정양리</s.RecommendationText>
             <s.RecommendationSubText>로 귀농하시는 것 어떠세요?</s.RecommendationSubText>
+            <s.RecommendationDetailsText>경상북도 상주시는 친환경 농업을 하는 귀농인이 많은 지역입니다. 또한 경부고속도로와 인접하여 다른 지역과의 접근성이 좋아요!</s.RecommendationDetailsText>
             <s.RecommendationButton onClick={redirectto}>자세히 알아보기 {">"}</s.RecommendationButton>
           </>
         )}
