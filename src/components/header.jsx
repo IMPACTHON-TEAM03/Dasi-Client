@@ -26,6 +26,11 @@ const NavItemLi = styled.li`
   &:not(:last-child) {
     margin-right: 72px;
   }
+
+  &:hover {
+    color: #04c974;
+    cursor: pointer;
+  }
 `;
 
 function Header() {
@@ -33,10 +38,38 @@ function Header() {
     <HeaderContainer>
       <NavItemUl>
         <NavItemLi>
-          <Link to="/region">지역</Link>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#04C974",
+            }}
+            to="/"
+          >
+            지역
+          </Link>
         </NavItemLi>
-        <NavItemLi>부동산</NavItemLi>
-        <NavItemLi>서비스</NavItemLi>
+        <NavItemLi>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#04C974",
+            }}
+            to="/property"
+          >
+            부동산
+          </Link>
+        </NavItemLi>
+        <NavItemLi>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#04C974",
+            }}
+            to="/service"
+          >
+            서비스
+          </Link>
+        </NavItemLi>
       </NavItemUl>
     </HeaderContainer>
   );

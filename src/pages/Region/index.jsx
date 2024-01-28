@@ -92,15 +92,24 @@ const Region = () => {
     );
   };
 
+  const redirectto = () => {
+    window.location.href = "https://raon880.tistory.com/entry/%EA%B7%80%EB%86%8D%EA%B7%80%EC%B4%8C-%EC%B6%94%EC%B2%9C-%EB%A7%88%EC%9D%84-6%ED%8E%B8-%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84-%EC%83%81%EC%A3%BC%EC%8B%9C?category=1018522";
+  };
+
   return (
     <>
       <Header />
-      <s.MainContainer>{renderQuestion()}</s.MainContainer>
-      {currentQuestion >= questions.length && (
-        <s.RecommendationSection>
-          <s.RecommendationText>추천 지역: {calculateRecommendation()}</s.RecommendationText>
-        </s.RecommendationSection>
-      )}
+      <s.RecommendationSection>
+        {renderQuestion()}
+        {currentQuestion >= questions.length && (
+          <>
+            <s.RecommendationTitleText>그렇다면..</s.RecommendationTitleText>
+            <s.RecommendationText>경상북도 상주시 모동면 정양리</s.RecommendationText>
+            <s.RecommendationSubText>로 귀농하시는 것 어떠세요?</s.RecommendationSubText>
+            <s.RecommendationButton onClick={redirectto}>자세히 알아보기 {">"}</s.RecommendationButton>
+          </>
+        )}
+      </s.RecommendationSection>
     </>
   );
 };
