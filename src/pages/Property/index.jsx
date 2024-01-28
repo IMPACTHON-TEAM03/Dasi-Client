@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../components/header";
 import * as s from "../../styles/PropertyPageStyle";
+import FilterModal from "./FilterModal";
 
 const Property = () => {
   useEffect(() => {
@@ -66,6 +67,7 @@ const Property = () => {
       </s.FilterButton>
       <s.MapContainer id="map"></s.MapContainer>
       <div id="fetchResult"></div>
+      <FilterModal>dd</FilterModal>
     </>
   );
 };

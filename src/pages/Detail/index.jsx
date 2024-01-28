@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./style";
+import * as S from "../../styles/DetailPageStyle";
 import Header from "../../components/header";
 
 const Detail = () => {
