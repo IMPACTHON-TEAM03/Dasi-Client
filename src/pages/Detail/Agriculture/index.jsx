@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../../styles/DetailPageStyle";
-import Header from "../../components/header";
+import * as S from "../../../styles/DetailPageStyle";
+import Header from "../../../components/header";
 
 const Detail = () => {
   return (
@@ -18,7 +18,10 @@ const Detail = () => {
               </S.Tags>
             </div>
             <S.Subtitle>상세설명</S.Subtitle>
-            <S.Description>오래된 시골집을 하나하니씩 리모델링 해가며 자신만의 집을 꾸려보세요!</S.Description>
+            <S.Description>
+              오래된 시골집을 하나하니씩 리모델링 해가며 자신만의 집을
+              꾸려보세요!
+            </S.Description>
           </S.Wrapper>
           <S.Wrapper>
             <S.Title>시골집 리모델링 플렌</S.Title>

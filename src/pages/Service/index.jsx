@@ -5,23 +5,36 @@ import call from "../../images/call.svg";
 import home from "../../images/home.svg";
 import roller from "../../images/roller.svg";
 import chat from "../../images/chat.svg";
+import Header from "../../components/header";
+import { Link } from "react-router-dom";
 
 const index = () => {
   return (
     <>
+      <Header />
       <S.Box1>
-        <S.Box />
+        <Link to="/study">
+          <S.Box />
+        </Link>
       </S.Box1>
       <S.Box2>
-        <S.Box />
+        <Link to="/agriculture">
+          <S.Box />
+        </Link>
       </S.Box2>
       <S.Box3>
-        <S.Box />
+        <Link to="/house">
+          <S.Box />
+        </Link>
       </S.Box3>
       <S.Box4>
-        <S.Box />
+        <Link to="/interior">
+          <S.Box />
+        </Link>
       </S.Box4>
-      <S.Box5 />
+      <S.Box5>
+        <Link to="/build" />
+      </S.Box5>
 
       <S.People src={people}></S.People>
       <S.Call src={call}></S.Call>

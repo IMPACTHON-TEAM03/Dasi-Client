@@ -14,6 +14,30 @@ export const HeaderContainer = styled.div`
   position: absolute;
 `;
 
+export const Return = styled.img`
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  left: 80px;
+`;
+
+export const LogoText = styled.div`
+  color: var(--primary, white);
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  left: 150px;
+  top: 33px;
+  text-decoration: none;
+`;
 export const NavItemUl = styled.ul`
   display: flex;
 `;
@@ -33,7 +57,8 @@ export const NavItemLi = styled.li`
 export const MainSection = styled.section`
   width: 100%;
   height: 100vh;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${BackgroundJPEG});
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${BackgroundJPEG});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

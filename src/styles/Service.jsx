@@ -6,7 +6,7 @@ export const Box = styled.div`
   border-radius: 20px;
   border: 3px solid var(--gray700, #545454);
   position: absolute;
-  top: 170px;
+  top: 77px;
 
   &:hover::before {
     content: "";

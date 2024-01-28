@@ -13,8 +13,8 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Return = styled.img`
-  width: 55px;
-  height: 33px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -28,14 +28,12 @@ export const LogoText = styled.div`
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 52px;
-  letter-spacing: -0.6px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: absolute;
   left: 150px;
-  bottom: 18px;
+  top: 33px;
   text-decoration: none;
 `;
 

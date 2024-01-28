@@ -5,6 +5,7 @@ import font from "../styles/theme/font";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 `;
 
 export const Contents = styled.div`
@@ -16,11 +17,10 @@ export const Contents = styled.div`
   gap: 20px;
 `;
 
-export const Thumbnail = styled.div`
-  width: 100%;
-  height: 400px;
+export const Thumbnail = styled.img`
+  width: 668px;
+  height: 410px;
   border-radius: 10px;
-  background-color: ${theme.gray[500]};
   margin-bottom: 20px;
 `;
 

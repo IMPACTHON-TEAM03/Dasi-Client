@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import * as S from "../styles/Header";
+import returnicon from "../images/returnlogo.svg";
 
 const HeaderContainer = styled.div`
   background-color: transparent;
@@ -31,12 +33,20 @@ const NavItemLi = styled.li`
 function Header() {
   return (
     <HeaderContainer>
+      <S.Return src={returnicon} />
+      <S.LogoText>
+        <Link to="/">다시</Link>
+      </S.LogoText>
       <NavItemUl>
         <NavItemLi>
           <Link to="/region">지역</Link>
         </NavItemLi>
-        <NavItemLi>부동산</NavItemLi>
-        <NavItemLi>서비스</NavItemLi>
+        <NavItemLi>
+          <Link to="/property">부동산</Link>
+        </NavItemLi>
+        <NavItemLi>
+          <Link to="/service">서비스</Link>
+        </NavItemLi>
       </NavItemUl>
     </HeaderContainer>
   );
