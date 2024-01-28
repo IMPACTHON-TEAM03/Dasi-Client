@@ -24,8 +24,8 @@ export const FilterButton = styled.button`
   padding: 0 30px;
   position: absolute;
   cursor: pointer;
-  margin-top: 40px;
-  z-index: 1;
+  margin-top: 51px;
+  z-index: 2;
   left: 50%;
   transform: translateX(-50%);
 

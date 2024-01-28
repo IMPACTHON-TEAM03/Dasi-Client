@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import theme from "../../styles/theme/theme";
-import font from "../../styles/theme/font";
+import theme from "../styles/theme/theme";
+import font from "../styles/theme/font";
 
 export const Container = styled.div`
   width: 100vw;

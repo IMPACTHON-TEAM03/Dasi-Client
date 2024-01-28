@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header";
 import * as s from "../../styles/PropertyPageStyle";
 import FilterModal from "./FilterModal";
 
 const Property = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [filterParams, setFilterParams] = useState({});
+
   useEffect(() => {
     let kakao = window.kakao;
     let map;
@@ -24,7 +27,20 @@ const Property = () => {
     }
 
     async function getLands() {
-      let response = await fetch("https://impacton-api.gdre.dev/getLands/");
+      let url = "https://impacton-api.gdre.dev/getLands/";
+
+      if (Object.keys(filterParams).length > 0) {
+        url += "?";
+        for (let key in filterParams) {
+          url += `${key}=${filterParams[key]}&`;
+        }
+        url = url.slice(0, -1);
+      }
+
+      let response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       let json = await response.json();
 
       if (json["header"]["result"] !== "success") {
@@ -33,41 +49,39 @@ const Property = () => {
       }
 
       json["body"]["items"].forEach((item) => {
-        let button = document.createElement("button");
-        button.classList.add("btn");
-        button.classList.add("btn-primary");
-        button.classList.add("m-2");
-        button.textContent = `${item["location"]} (${Number(item["price"]).toLocaleString()}원)`;
-
-        let marker = new kakao.maps.Marker({
-          map: map,
-          position: new kakao.maps.LatLng(item["latitude"], item["longitude"]),
+        const markerPosition = new kakao.maps.LatLng(item["latitude"], item["longitude"]);
+        const marker = new kakao.maps.Marker({
+          position: markerPosition,
         });
-
-        button.addEventListener("click", (e) => {
-          map.setLevel(3);
-          map.setCenter(new kakao.maps.LatLng(item["latitude"], item["longitude"]));
-        });
-
-        document.getElementById("fetchResult").appendChild(button);
+        marker.setMap(map);
       });
     }
 
     if (map) {
       getLands();
     }
-  }, []);
+
+    return () => {};
+  }, [filterParams]);
+
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
+  const applyFilters = (filters) => {
+    setFilterParams(filters);
+    setModalVisible(false);
+  };
 
   return (
     <>
       <Header />
-      <s.FilterButton>
+      <s.FilterButton onClick={toggleModal}>
         <s.GearIcon />
-        <s.FilterText>조건을 설정하려면 여기를 클릭하세요</s.FilterText>
+        <s.FilterText>{modalVisible ? "조건 창을 다시 닫으려면 여기를 클릭하세요" : "조건을 설정하려면 여기를 클릭하세요"}</s.FilterText>
       </s.FilterButton>
-      <s.MapContainer id="map"></s.MapContainer>
+      <s.MapContainer id="map">{modalVisible && <FilterModal applyFilters={applyFilters} />}</s.MapContainer>
       <div id="fetchResult"></div>
-      <FilterModal>dd</FilterModal>
     </>
   );
 };
